@@ -6,17 +6,27 @@ block content
       each val, index in data.err
         li=val
   form(id = "formid" method = 'post' action='/register')
-    row
+    div(Class ="row")
       label(for='name') Nafn
       input(id = 'line' type='text', name='name', value=data.name)
-    row
+    div(Class ="row")
       label(for='email') Netfang
       input(id = 'line' type='text', name='email', value=data.email)
-    row
+    div(Class ="row")
       label(for='ssn') Kennitala
       input(id = 'line' type='text',name='ssn', value=data.ssn)
-    row
+    div(Class ="row")
       label(for='amount') Fjöldi
       input(id = 'line' type='number' name='amount' value=data.amount)
-    Submit
+    div(Class ="submit")
       input(id = 'button' type="submit" value="senda")
+  div(class="botn")
+    if LoginOut
+      form(class="loginOut", method="logout", action="/logout")
+        p='Innskráður notandi er:' + notandi
+        a(href="/logout") Útskrá
+        a(href="/admin") Stjórnsíða
+    else
+      form(class="loginOut", method="logout", action="/login")
+        a(href="/login") Innskrá
+

@@ -44,21 +44,21 @@ function strat(username, password, done) {
     .catch((err) => {
       done(err);
     });
-  }
-  passport.use(new Strategy(strat));
+}
+passport.use(new Strategy(strat));
 
-  passport.serializeUser((user, done) => {
-    done(null, user.id);
-  });
-  passport.deserializeUser((id, done) => {
-    users
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
+passport.deserializeUser((id, done) => {
+  users
     .findById(id)
     .then(user => done(null, user))
     .catch(err => done(err));
 });
-  app.use(passport.initialize());
+app.use(passport.initialize());
 
-  app.use(passport.session());
+app.use(passport.session());
 
 app.use((req, res, next) => {
   if (req.isAuthenticated()) {
@@ -70,8 +70,6 @@ app.use((req, res, next) => {
 
 app.use(form);
 app.use(admin);
-
-
 
 function notFoundHandler(req, res, next) { // eslint-disable-line
   res.status(404).render('error', { title: '404', errorbreyta: 'Því miður hefurðu lent í 404 villu :(' });

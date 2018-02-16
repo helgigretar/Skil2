@@ -1,11 +1,11 @@
 extends layout
 block content
     form(id ="mainer" method = 'post' action = '/login')
-        row
+        div(Class ="row")
             label(for='username') Notendanafn
             input(id = 'line' type='text', name='username')
-        row
+        div(Class ="row")
             label(for='password') Lykilorð
             input(id = 'line' type='password', name='password')
-        submit
+        div(Class ="submit")
             input(id = 'button' type="submit" value="Innskrá")

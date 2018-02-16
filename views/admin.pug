@@ -2,9 +2,9 @@
 extends layout
 block content
     form(id ="taflan" method = 'post' action = '/')
-        table-wrapper
+        div(Class ="table-wrapper")
             table
-                thead
+                div(class ="thead")
                     tr
                         th id
                         th dagsetning
@@ -12,7 +12,7 @@ block content
                         th email
                         th ssn
                         th amount
-                tbody
+                div(class ="tbody")
                     for i in data
                         tr
                             td=i.id
@@ -21,5 +21,5 @@ block content
                             td=i.email
                             td=i.ssn
                             td=i.amount
-        Bottom
+        div(class ="bottom")
             a(href ='/download') Sækja

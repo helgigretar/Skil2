@@ -19,98 +19,116 @@ body {
   background-color: #eee;
   color: #333;
 }
-/*Allt formið í pug*/
-#taflan{
+
+#taflan {
   text-align: center;
   margin: auto;
   margin-top: 4%;
-  height: 420px;
+  height: 600px;
   border-bottom: 1px solid black;
 }
-#mainer{
+
+#mainer {
   text-align: center;
   margin: auto;
-  margin-top: 4%;
+  margin-top: 7%;
   padding-left: 31%;
   padding-right: 31%;
   padding-bottom: 1%;
   margin-left: 1%;
   margin-right: 1%;
-  height: 380px;
+  height: 480px;
   border-bottom: 1px solid black;
 }
-/*Nafn, nettfang, kennitala og fjöldi*/
-label{
+
+label {
   font-size: 1.7rem;
   margin-left: 1.2em;
 }
-/*röðin*/
-row{
+
+.row {
   display: flex;
-  flex-direction:row;
-  padding-bottom:2%;
-  padding-top:3%;
+  flex-direction: row;
+  padding-bottom: 2%;
+  padding-top: 3%;
   justify-content: space-between;
   max-width: 100%;
 }
-/*Senda takkinn*/
-submit{
+
+.submit {
   padding-top: 4%;
-  padding-right:58%;
+  padding-right: 58%;
   display: flex;
   justify-content: flex-start;
   max-width: 100px;
 }
-table-wrapper{
+
+.table-wrapper {
   display: flex;
   justify-content: center;
 }
-table, th, td {
+
+.table,
+th,
+td {
+  width: 160px;
   border: 1px solid black;
 }
-#button{
-  margin-left:2em;
+
+#button {
+  margin-left: 2em;
   min-width: 150px;
   min-height: 30px;
-  background-color: #DCDCDC;
+  background-color: #dcdcdc;
   border-radius: 25px;
 }
-#line{
-  min-width: 250px;
+
+#line {
+  min-width: 300px;
   min-height: 40px;
+  font-size: 1.3em;
 }
-ul{
+
+ul {
   margin-left: 36%;
 }
-li{
+
+li {
   margin-top: 1%;
 }
-p{
+
+p {
   margin-left: 4%;
+  display: flex;
 }
-container{
+
+.container {
   display: flex;
   flex-direction: column;
   font-size: 1.3rem;
   padding-top: 20%;
 }
-b{
+
+b {
   padding-bottom: 3%;
 }
-th{
-  background-color:	#D3D3D3
+
+th {
+  background-color: #d3d3d3;
 }
-td{
+
+td {
   height: 30px;
 }
-bottom{
+
+.bottom {
+  font-size: 1.3rem;
   display: flex;
   justify-content: flex-start;
-  margin-left: 20%;
-  margin-top: 1.5%;
-  font-size: 1.2em;
+  padding-left: 28%;
 }
-#formid{
+
+#formid {
   text-align: center;
   margin: auto;
   margin-top: 4%;
@@ -119,7 +137,13 @@ bottom{
   padding-bottom: 1%;
   margin-left: 1%;
   margin-right: 1%;
-  height: 320px;
+  height: 480px;
   border-bottom: 1px solid black;
+}
+
+a {
+  display: flex;
+  margin-top: 1%;
+  margin-left: 4%;
 }
 
