@@ -1,0 +1,25 @@
+
+extends layout
+block content
+    form(id ="taflan" method = 'post' action = '/')
+        table-wrapper
+            table
+                thead
+                    tr
+                        th id
+                        th dagsetning
+                        th name
+                        th email
+                        th ssn
+                        th amount
+                tbody
+                    for i in data
+                        tr
+                            td=i.id
+                            td=i.date
+                            td=i.name
+                            td=i.email
+                            td=i.ssn
+                            td=i.amount
+        Bottom
+            a(href ='/download') Sækja

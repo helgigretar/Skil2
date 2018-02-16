@@ -1,4 +1,22 @@
 extends layout
 
 block content
-  p Form!
+  if data.err
+    ul
+      each val, index in data.err
+        li=val
+  form(id = "formid" method = 'post' action='/register')
+    row
+      label(for='name') Nafn
+      input(id = 'line' type='text', name='name', value=data.name)
+    row
+      label(for='email') Netfang
+      input(id = 'line' type='text', name='email', value=data.email)
+    row
+      label(for='ssn') Kennitala
+      input(id = 'line' type='text',name='ssn', value=data.ssn)
+    row
+      label(for='amount') Fjöldi
+      input(id = 'line' type='number' name='amount' value=data.amount)
+    Submit
+      input(id = 'button' type="submit" value="senda")
