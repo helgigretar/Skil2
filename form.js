@@ -68,7 +68,7 @@ router.post(
   check('email').isEmail().withMessage('Netfang verður að vera netfang'),
   check('ssn').isLength({ min: 1 }).withMessage('Kennitala má ekki vera tóm'),
   check('ssn').matches(/^[0-9]{6}-?[0-9]{4}$/).withMessage('Kennitala verður að vera á formi 000000-0000'),
-  check('amount').isInt({ min: 1, max: 2147483647 }).withMessage('Talan má ekki vera mínustala og ekki of stór'),
+  check('amount').isInt({ min: 1, max: 2147483647 }).withMessage('Talan má ekki vera tóm, mínus eða og stór'),
 
   async (req, res) => {
     const data = req.body;
