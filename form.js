@@ -4,6 +4,7 @@ const xss = require('xss');
 const passport = require('passport');
 
 const router = express.Router();
+
 const { check, validationResult } = require('express-validator/check');
 
 const connectionString = process.env.DATABASE_URL || 'postgres://@localhost/postgres';
