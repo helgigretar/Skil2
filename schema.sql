@@ -1,9 +1,10 @@
-CREATE TABLE Tafla
+CREATE TABLE public.tafla
 (
-    id serial primary key,
-    date timestamp with time zone not null default current_timestamp,
-    name varchar(99),
-    email varchar(99),
-    ssn varchar(99),
-    amount INT
-);
+    id SERIAL NOT NULL,
+    date timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    name character varying(99) COLLATE pg_catalog."default",
+    email character varying(99) COLLATE pg_catalog."default",
+    ssn character varying(99) COLLATE pg_catalog."default",
+    amount integer,
+    CONSTRAINT tafla_pkey PRIMARY KEY (id)
+)
