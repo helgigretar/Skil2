@@ -5,7 +5,8 @@ const passport = require('passport');
 
 const router = express.Router();
 const { check, validationResult } = require('express-validator/check');
-//const connectionString = 'postgres://notandi:@localhost/v2';
+
+const connectionString = process.env.DATABASE_URL || 'postgres://@localhost/postgres';
 
 
 router.get('/login', async (req, res) => {
@@ -38,12 +39,15 @@ router.post(
   },
 );
 async function SkraIGogn(name, email, ssn, amount) {
-  const client = new Client({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'postgres',
-    password: 'Pluto050196',
-  });
+  /* const client = new Client({
+   * user: 'postgres',
+   * host: 'localhost',
+   * database: 'postgres',
+   * password: 'Pluto050196',
+   * });
+   */
+  const client = new Client({ connectionString });
+
   await client.connect();
   await client.query(
     'INSERT INTO tafla(name, email, ssn, amount) VALUES ($1, $2, $3, $4);',

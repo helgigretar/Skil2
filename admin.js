@@ -4,6 +4,7 @@ const router = express.Router();
 const { Client } = require('pg');
 /* Varð að diabla þessa línu því ég er að nota csv þegar ég er að niðurhala skjalinu */
 const csv = require('express-csv'); // eslint-disable-line
+const connectionString = process.env.DATABASE_URL || 'postgres://@localhost/postgres';
 
 function ensureLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
@@ -35,12 +36,14 @@ router.get('/logout', (req, res) => {
   res.redirect('/');
 });
 async function PutData() {
-  const client = new Client({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'postgres',
-    password: 'Pluto050196',
-  });
+  /* const client = new Client({
+   * user: 'postgres',
+   * host: 'localhost',
+   * database: 'postgres',
+   * password: 'Pluto050196',
+   * });
+   */
+  const client = new Client({ connectionString });
   await client.connect();
   const data = await client.query('SELECT date, name, email, amount, ssn FROM tafla');
   await client.end();
