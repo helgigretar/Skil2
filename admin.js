@@ -13,12 +13,14 @@ function ensureLoggedIn(req, res, next) {
   return res.redirect('/login');
 }
 async function Getgogn() {
-  const client = new Client({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'postgres',
-    password: 'Pluto050196',
-  });
+/* const client = new Client({
+   * user: 'postgres',
+   * host: 'localhost',
+   * database: 'postgres',
+   * password: 'Pluto050196',
+   * });
+   */
+  const client = new Client({ connectionString });
   await client.connect();
   const data = await client.query('SELECT id, date, name, email, ssn, amount FROM tafla');
   await client.end();
@@ -72,7 +74,7 @@ router.use((req, res, next) => {
 });
 function thanks(req, res) {
   const gogn = {};
-  res.render('thanks', { gogn, footerbreyta: '<p><a href="/login"> inskráning</a></p>' });
+  res.render('thanks', { gogn, footerbreyta: '<p><a href="/login"> innskráning</a></p>' });
 }
 router.get('/thanks', thanks);
 
